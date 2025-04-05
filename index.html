@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الشيمي للأدوات المنزلية - جودة وتصميم عصري لمنزلك</title> <meta name="description" content="اكتشف تشكيلتنا الراقية من الأدوات المنزلية والمطبخ عالية الجودة بتصاميم عصرية وذكية. الشيمي، اختيارك الأول لمنزل أنيق وعملي في مصر."> <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.alsheimy-homewares.com" /> <link rel="icon" href="https://placehold.co/32x32/0ea5e9/ffffff?text=S" type="image/png">
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script> <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* Ensure Lucide Icons Font is loaded reliably */
+    @font-face {
+      font-family: 'LucideIcons';
+      src: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/font/lucide.ttf') format('truetype');
+      font-display: block; /* Helps prevent invisible text during load */
+    }
+    .lucide {
+      font-family: 'LucideIcons';
+      display: inline-block;
+      vertical-align: middle;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    /* Base Body Styling */
+    body {
+      font-family: 'Cairo', sans-serif;
+      color: #1f2937; /* gray-800 */
+      background-color: #f8fafc; /* neutral-100 as base */
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    /* Custom Animations */
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
+    .animate-fade-in { animation: fadeIn 0.7s ease-out forwards; }
+    .animate-fade-in-up { animation: fadeInUp 0.7s ease-out forwards; opacity: 0; } /* Start hidden */
+    .animate-delay-100 { animation-delay: 0.1s; }
+    .animate-delay-200 { animation-delay: 0.2s; }
+    .animate-delay-300 { animation-delay: 0.3s; }
+    .animate-delay-400 { animation-delay: 0.4s; }
+
+    /* Mobile Menu Styling */
+    .mobile-menu {
+      max-height: 0;
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease-out, opacity 0.3s ease-out, visibility 0.4s;
+      overflow: hidden;
+      opacity: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      visibility: hidden; /* Hide when closed */
+    }
+    .mobile-menu.open {
+      max-height: calc(100vh - 60px); /* Adjust based on header height */
+      opacity: 1;
+      padding-top: 1rem;
+      padding-bottom: 1.5rem;
+      visibility: visible; /* Show when open */
+      overflow-y: auto; /* Allow scrolling if content exceeds height */
+    }
+    /* Product Card Enhancements */
+    .product-card .product-actions {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0.3s;
+      transform: translateY(10px);
+    }
+    .product-card:hover .product-actions,
+    .product-card:focus-within .product-actions { /* Show on focus-within for keyboard nav */
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .product-card .product-image {
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .product-card:hover .product-image {
+      transform: scale(1.05);
+    }
+    /* Focus state for product links within cards */
+    .product-card a:focus-visible {
+        outline: 2px solid #0ea5e9; /* primary color */
+        outline-offset: 2px;
+        border-radius: 0.25rem; /* rounded */
+    }
+    /* Slick Slider Customization */
+    .slick-dots li button:before { font-size: 10px; color: #0ea5e9; opacity: 0.4; transition: opacity 0.3s; }
+    .slick-dots li.slick-active button:before { opacity: 1; color: #0284c7; }
+    .slick-slide { outline: none; } /* Remove focus outline from slides */
+
+    /* Tailwind Custom Configuration */
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            Cairo: ['Cairo', 'sans-serif'],
+          },
+          colors: {
+            'primary': {
+              light: '#e0f2fe', // sky-100
+              DEFAULT: '#0ea5e9', // sky-500
+              dark: '#0284c7'  // sky-600
+            },
+            'secondary': {
+              light: '#f1f5f9', // slate-100
+              DEFAULT: '#64748b', // slate-500
+              dark: '#334155'  // slate-700
+            },
+            'accent': {
+                DEFAULT: '#facc15', // yellow-400
+                dark: '#eab308' // yellow-500
+            },
+            'neutral': {
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              300: '#cbd5e1',
+              400: '#94a3b8',
+              500: '#64748b',
+              600: '#475569',
+              700: '#334155',
+              800: '#1e293b',
+              900: '#0f172a',
+            }
+          },
+          boxShadow: {
+            'subtle': '0 2px 4px rgba(0, 0, 0, 0.05)',
+            'card': '0 4px 12px rgba(0, 0, 0, 0.07)',
+            'card-hover': '0 10px 25px rgba(0, 0, 0, 0.1)',
+            'header': '0 2px 5px rgba(0, 0, 0, 0.06)'
+          },
+          borderRadius: {
+            'xl': '1rem',
+            '2xl': '1.5rem',
+            '3xl': '2rem',
+          },
+          transitionTimingFunction: {
+             'out-expo': 'cubic-bezier(0.16, 1, 0.3, 1)',
+          }
+        }
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeGoodsStore",
+    "name": "الشيمي للأدوات المنزلية",
+    "description": "متخصصون في توفير الأدوات المنزلية والمطبخ عالية الجودة بتصاميم عصرية وذكية منذ 2010.",
+    "address": { "@type": "PostalAddress", "streetAddress": "شارع المثال 123", "addressLocality": "القاهرة", "postalCode": "11511", "addressCountry": "EG" },
+    "telephone": "+20-2-12345678",
+    "email": "info@alsheimy-homewares.com",
+    "url": "https://www.alsheimy-homewares.com",
+    "openingHours": "Mo-Su 10:00-22:00",
+    "image": "https://placehold.co/1200x630/0ea5e9/ffffff?text=الشيمي+للأدوات+المنزلية",
+    "logo": "https://placehold.co/200x200/0ea5e9/ffffff?text=الشيمي",
+    "priceRange": "$$"
+  }
+  </script>
+</head>
+<body class="font-Cairo text-neutral-800 bg-neutral-50"> <header class="bg-white border-b border-neutral-200 sticky top-0 z-50 shadow-header">
+    <div class="container mx-auto px-4 sm:px-6 py-3">
+      <div class="flex justify-between items-center gap-4">
+        <a href="#" class="text-2xl font-extrabold text-primary hover:text-primary-dark transition-colors duration-200" aria-label="الشيمي للأدوات المنزلية - الرئيسية">
+          <span class="hidden md:inline">الشيمي</span><span class="md:hidden">ش</span> للأدوات المنزلية
+        </a>
+
+        <nav class="hidden lg:flex items-center space-x-6 space-x-reverse" aria-label="القائمة الرئيسية">
+           <a href="#products" class="text-neutral-700 font-semibold hover:text-primary transition-colors duration-200">المنتجات</a>
+           <a href="#rooms" class="text-neutral-700 font-semibold hover:text-primary transition-colors duration-200">الغرف</a>
+           <a href="#offers" class="text-neutral-700 font-semibold hover:text-primary transition-colors duration-200">العروض</a>
+           <a href="#inspiration" class="text-neutral-700 font-semibold hover:text-primary transition-colors duration-200">الإلهام</a>
+        </nav>
+
+        <div class="flex-grow hidden lg:block max-w-lg mx-auto">
+          <form class="relative group" role="search" action="/search">
+            <button type="submit" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-neutral-400 group-focus-within:text-primary hover:text-primary transition-colors duration-200" aria-label="بحث">
+                <span class="lucide text-lg" aria-hidden="true">search</span>
+            </button>
+            <input type="search" name="q" placeholder="ابحث عن أدوات منزلية، ماركات..." aria-label="بحث المنتجات"
+                   class="w-full p-3 pr-12 rounded-full bg-neutral-100 border border-neutral-200 focus:ring-2 focus:ring-primary/50 focus:border-primary text-sm shadow-sm transition duration-200 placeholder:text-neutral-400 group-hover:border-neutral-300">
+          </form>
+        </div>
+
+        <div class="flex items-center space-x-1 sm:space-x-3 space-x-reverse">
+          <a href="#" class="p-2 hover:bg-neutral-100 rounded-full relative group" aria-label="المفضلة - 3 عناصر">
+            <span class="lucide text-xl text-neutral-600 group-hover:text-primary transition-colors duration-200" aria-hidden="true">heart</span>
+            <span class="absolute -top-1 -right-1 bg-primary text-white text-[10px] font-bold rounded-full px-1.5 leading-tight">3</span>
+             <span class="absolute bottom-full right-1/2 transform translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-neutral-800 text-white text-xs px-2 py-1 rounded whitespace-nowrap pointer-events-none">
+                المفضلة
+             </span>
+          </a>
+          <a href="#" class="p-2 hover:bg-neutral-100 rounded-full relative group" aria-label="سلة التسوق - عنصران">
+            <span class="lucide text-xl text-neutral-600 group-hover:text-primary transition-colors duration-200" aria-hidden="true">shopping-cart</span>
+            <span class="absolute -top-1 -right-1 bg-primary text-white text-[10px] font-bold rounded-full px-1.5 leading-tight">2</span>
+             <span class="absolute bottom-full right-1/2 transform translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-neutral-800 text-white text-xs px-2 py-1 rounded whitespace-nowrap pointer-events-none">
+                السلة
+             </span>
+          </a>
+          <a href="#" class="p-2 hover:bg-neutral-100 rounded-full relative group hidden sm:inline-flex" aria-label="حسابي">
+            <span class="lucide text-xl text-neutral-600 group-hover:text-primary transition-colors duration-200" aria-hidden="true">user</span>
+             <span class="absolute bottom-full right-1/2 transform translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-neutral-800 text-white text-xs px-2 py-1 rounded whitespace-nowrap pointer-events-none">
+                حسابي
+             </span>
+          </a>
+          <button id="mobileMenuButton" class="lg:hidden p-2 hover:bg-neutral-100 rounded-full" aria-label="فتح القائمة" aria-expanded="false" aria-controls="mobileMenu">
+            <span class="lucide text-2xl text-neutral-600" aria-hidden="true">menu</span>
+          </button>
+        </div>
+      </div>
+
+      <nav id="mobileMenu" class="mobile-menu lg:hidden bg-white border-t border-neutral-200 -mx-4 sm:-mx-6 px-4 sm:px-6" aria-label="قائمة التنقل للهاتف">
+        <div class="space-y-1"> <a href="#products" class="block px-4 py-3 font-semibold text-neutral-700 hover:bg-neutral-100 hover:text-primary rounded-lg transition-colors duration-150">المنتجات</a>
+          <a href="#rooms" class="block px-4 py-3 font-semibold text-neutral-700 hover:bg-neutral-100 hover:text-primary rounded-lg transition-colors duration-150">الغرف</a>
+          <a href="#offers" class="block px-4 py-3 font-semibold text-neutral-700 hover:bg-neutral-100 hover:text-primary rounded-lg transition-colors duration-150">العروض</a>
+          <a href="#inspiration" class="block px-4 py-3 font-semibold text-neutral-700 hover:bg-neutral-100 hover:text-primary rounded-lg transition-colors duration-150">الإلهام</a>
+          <a href="#" class="block px-4 py-3 font-semibold text-neutral-700 hover:bg-neutral-100 hover:text-primary rounded-lg transition-colors duration-150 sm:hidden">حسابي</a>
+          <div class="px-2 pt-4 border-t border-neutral-200">
+            <form class="relative group" role="search" action="/search-mobile">
+               <button type="submit" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-neutral-400 group-focus-within:text-primary hover:text-primary" aria-label="بحث">
+                   <span class="lucide text-lg" aria-hidden="true">search</span>
+               </button>
+              <input type="search" name="q_mobile" placeholder="بحث سريع..." aria-label="بحث سريع"
+                     class="w-full p-3 pr-10 bg-neutral-100 rounded-lg text-sm border border-neutral-200 focus:ring-1 focus:ring-primary focus:border-primary placeholder:text-neutral-400">
+            </form>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+      <section class="bg-gradient-to-br from-primary-light via-neutral-50 to-neutral-100 overflow-hidden" aria-labelledby="hero-heading">
+        <div class="hero-slider relative">
+          <div class="!flex items-center container mx-auto px-4 sm:px-6 py-16 md:py-24 min-h-[65vh] md:min-h-[75vh]">
+            <div class="grid md:grid-cols-2 gap-12 items-center w-full">
+              <div class="space-y-6 text-center md:text-right animate-fade-in-up opacity-0">
+                <h1 id="hero-heading" class="text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight text-neutral-800">
+                  جودة تلتقي بالأناقة<br>
+                  <span class="text-primary">في كل ركن من منزلك</span>
+                </h1>
+                <p class="text-lg text-neutral-600 max-w-lg mx-auto md:mx-0">اكتشف تشكيلتنا المختارة من الأدوات المنزلية التي تجمع بين المتانة والتصميم العصري.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-2">
+                  <a href="#products" class="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-primary-dark shadow-lg hover:shadow-xl transition-all duration-300 ease-out-expo transform hover:-translate-y-1 focus-visible:ring-2 focus-visible:ring-primary-dark focus-visible:ring-offset-2">
+                    تسوق الآن <span class="lucide text-sm ml-1" aria-hidden="true">arrow-left</span>
+                  </a>
+                  <a href="#inspiration" class="border-2 border-primary text-primary px-8 py-3 rounded-full font-semibold hover:bg-primary-light transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
+                    استلهم أفكاراً
+                  </a>
+                </div>
+              </div>
+              <div class="relative group hidden md:block animate-fade-in opacity-0 animate-delay-200">
+                 <div class="absolute -inset-4 bg-gradient-to-tr from-primary/10 to-transparent rounded-3xl transform group-hover:rotate-2 transition-transform duration-500 ease-out-expo"></div>
+                 <img src="https://placehold.co/800x600/e0f2fe/0284c7?text=مطبخ+الشيمي+الأنيق" alt="مطبخ عصري بأدوات الشيمي عالية الجودة" loading="eager"
+                      class="rounded-2xl shadow-xl relative z-10 transform group-hover:scale-105 transition-transform duration-500 ease-out-expo">
+              </div>
+            </div>
+          </div>
+          <div class="!flex items-center container mx-auto px-4 sm:px-6 py-16 md:py-24 min-h-[65vh] md:min-h-[75vh]">
+            <div class="grid md:grid-cols-2 gap-12 items-center w-full">
+               <div class="relative group hidden md:block">
+                 <div class="absolute -inset-4 bg-gradient-to-tl from-accent/10 to-transparent rounded-3xl transform group-hover:-rotate-2 transition-transform duration-500 ease-out-expo"></div>
+                 <img src="https://placehold.co/800x600/fef9c3/ca8a04?text=عروض+خاصة+للأدوات" alt="عروض خاصة على أدوات المائدة الفاخرة من الشيمي" loading="lazy"
+                      class="rounded-2xl shadow-xl relative z-10 transform group-hover:scale-105 transition-transform duration-500 ease-out-expo">
+              </div>
+              <div class="space-y-6 text-center md:text-right">
+                <h2 class="text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight text-neutral-800">
+                  عروض حصرية<br>
+                  <span class="text-accent-dark">لا تفوتها!</span>
+                </h2>
+                <p class="text-lg text-neutral-600 max-w-lg mx-auto md:mx-0">تخفيضات مذهلة على تشكيلة مختارة من أفضل الأدوات المنزلية. تسوق بذكاء اليوم.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-2">
+                  <a href="#offers" class="bg-accent text-neutral-800 px-8 py-3 rounded-full font-semibold hover:bg-accent-dark hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 ease-out-expo transform hover:-translate-y-1 focus-visible:ring-2 focus-visible:ring-accent-dark focus-visible:ring-offset-2">
+                    اكتشف العروض <span class="lucide text-sm ml-1" aria-hidden="true">tag</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+           <div class="!flex items-center container mx-auto px-4 sm:px-6 py-16 md:py-24 min-h-[65vh] md:min-h-[75vh]">
+             <div class="w-full text-center space-y-6">
+                <h2 class="text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight text-neutral-800">
+                  جديد الشيمي<br>
+                  <span class="text-secondary-dark">ابتكارات لكل منزل</span>
+                </h2>
+                <p class="text-lg text-neutral-600 max-w-lg mx-auto">تعرف على أحدث المنتجات التي وصلتنا، مصممة لتلبية احتياجاتك اليومية بأناقة وعملية.</p>
+                <img src="https://placehold.co/900x500/f1f5f9/334155?text=وصل+حديثاً+من+الشيمي" alt="منتجات الشيمي الجديدة - ابتكارات للمنزل" loading="lazy"
+                     class="rounded-2xl shadow-xl mx-auto mt-8 max-w-3xl">
+             </div>
+           </div>
+        </div>
+      </section>
+
+      <section id="rooms" class="py-16 lg:py-24 bg-white" role="region" aria-labelledby="rooms-heading">
+        <div class="container mx-auto px-4 sm:px-6">
+          <div class="text-center mb-12 lg:mb-16">
+            <h2 id="rooms-heading" class="text-3xl lg:text-4xl font-extrabold mb-3 text-neutral-800">تسوق حسب المساحة</h2>
+            <p class="text-lg text-neutral-600 max-w-2xl mx-auto">اعثر على كل ما تحتاجه لكل غرفة في منزلك بسهولة.</p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            <a href="#" class="block group rounded-xl overflow-hidden shadow-card hover:shadow-card-hover focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-white transition-all duration-300 ease-out-expo transform hover:-translate-y-1.5">
+              <figure class="relative">
+                <img src="https://placehold.co/500x350/e0f2fe/0284c7?text=المطبخ+العملي" alt="أدوات مطبخ عملية وأنيقة" loading="lazy" class="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"></div>
+                <figcaption class="absolute bottom-5 right-5 text-white text-2xl font-bold">المطبخ</figcaption>
+              </figure>
+            </a>
+             <a href="#" class="block group rounded-xl overflow-hidden shadow-card hover:shadow-card-hover focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-white transition-all duration-300 ease-out-expo transform hover:-translate-y-1.5">
+              <figure class="relative">
+                <img src="https://placehold.co/500x350/fef9c3/ca8a04?text=مائدة+الطعام" alt="أدوات مائدة طعام فاخرة" loading="lazy" class="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105">
+                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"></div>
+                <figcaption class="absolute bottom-5 right-5 text-white text-2xl font-bold">غرفة الطعام</figcaption>
+              </figure>
+            </a>
+             <a href="#" class="block group rounded-xl overflow-hidden shadow-card hover:shadow-card-hover focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-white transition-all duration-300 ease-out-expo transform hover:-translate-y-1.5">
+              <figure class="relative">
+                <img src="https://placehold.co/500x350/f1f5f9/334155?text=التخزين+الذكي" alt="حلول تخزين ذكية للمنزل" loading="lazy" class="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105">
+                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"></div>
+                <figcaption class="absolute bottom-5 right-5 text-white text-2xl font-bold">التخزين والتنظيم</figcaption>
+              </figure>
+            </a>
+             <a href="#" class="block group rounded-xl overflow-hidden shadow-card hover:shadow-card-hover focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-white transition-all duration-300 ease-out-expo transform hover:-translate-y-1.5">
+              <figure class="relative">
+                <img src="https://placehold.co/500x350/ecfdf5/047857?text=لمسات+الديكور" alt="قطع ديكور منزلية عصرية" loading="lazy" class="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105">
+                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"></div>
+                <figcaption class="absolute bottom-5 right-5 text-white text-2xl font-bold">الديكور</figcaption>
+              </figure>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="products" class="py-16 lg:py-24 bg-neutral-50" role="region" aria-labelledby="products-heading">
+        <div class="container mx-auto px-4 sm:px-6">
+          <div class="text-center mb-12 lg:mb-16">
+            <h2 id="products-heading" class="text-3xl lg:text-4xl font-extrabold mb-3 text-neutral-800">الأكثر مبيعاً</h2>
+            <p class="text-lg text-neutral-600 max-w-2xl mx-auto">منتجات حازت على ثقة عملائنا، اكتشف لماذا هي المفضلة.</p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            <article class="product-card bg-white rounded-xl shadow-card hover:shadow-card-hover focus-within:shadow-card-hover transition-all duration-300 ease-out-expo flex flex-col overflow-hidden group">
+              <figure class="relative">
+                <a href="#product-page-1" class="block aspect-w-1 aspect-h-1 overflow-hidden" aria-label="خلاط الشيمي برو">
+                  <img src="https://placehold.co/600x600/ffffff/0ea5e9?text=خلاط+برو+1" alt="خلاط الشيمي برو متعدد الوظائف - أزرق" loading="lazy"
+                       class="w-full h-full object-cover product-image">
+                </a>
+                <div class="product-actions absolute bottom-4 right-1/2 transform translate-x-1/2 flex space-x-2 space-x-reverse">
+                  <button class="bg-white p-2.5 rounded-full shadow-md hover:bg-primary hover:text-white focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 transition-colors duration-200" aria-label="إضافة خلاط الشيمي برو للمفضلة">
+                    <span class="lucide text-lg" aria-hidden="true">heart</span>
+                  </button>
+                   <button class="bg-white p-2.5 rounded-full shadow-md hover:bg-primary hover:text-white focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 transition-colors duration-200" aria-label="نظرة سريعة على خلاط الشيمي برو">
+                    <span class="lucide text-lg" aria-hidden="true">eye</span>
+                  </button>
+                </div>
+                 <span class="absolute top-3 left-3 bg-accent text-neutral-800 text-xs font-bold px-2 py-1 rounded-full shadow-sm">الأكثر مبيعاً</span>
+              </figure>
+              <div class="p-5 flex flex-col flex-grow">
+                <h3 class="font-bold text-lg mb-1 text-neutral-800 leading-tight">
+                    <a href="#product-page-1" class="hover:text-primary focus:text-primary transition-colors duration-200 stretched-link">خلاط الشيمي برو</a>
+                </h3>
+                <p class="text-sm text-neutral-500 mb-3 flex-grow">قوة فائقة لتحضير أشهى المشروبات والوصفات.</p>
+                <div class="flex justify-between items-center mt-auto">
+                  <span class="text-primary text-xl font-bold" aria-label="السعر 249 جنيه مصري">249 ج.م</span>
+                  <div class="flex items-center" aria-label="التقييم 4 من 5 نجوم">
+                    <span class="lucide text-base text-yellow-400" aria-hidden="true">star</span>
+                    <span class="lucide text-base text-yellow-400" aria-hidden="true">star</span>
+                    <span class="lucide text-base text-yellow-400" aria-hidden="true">star</span>
+                    <span class="lucide text-base text-yellow-400" aria-hidden="true">star</span>
+                    <span class="lucide text-base text-neutral-300" aria-hidden="true">star</span>
+                    <span class="text-neutral-500 text-xs mr-1">(112)</span>
+                  </div>
+                </div>
+                 <button class="mt-4 w-full bg-primary text-white py-2.5 px-4 rounded-lg font-semibold hover:bg-primary-dark focus-visible:bg-primary-dark focus-visible:ring-2 focus-visible:ring-primary-dark focus-visible:ring-offset-2 transition-colors duration-200 flex items-center justify-center space-x-2 space-x-reverse">
+                    <span class="lucide text-lg" aria-hidden="true">shopping-cart</span>
+                    <span>أضف للسلة</span>
+                 </button>
+              </div>
+            </article>
+            <article class="product-card bg-white rounded-xl shadow-card hover:shadow-card-hover focus-within:shadow-card-hover transition-all duration-300 ease-out-expo flex flex-col overflow-hidden group">
+              <figure class="relative">
+                <a href="#product-page-2" class="block aspect-w-1 aspect-h-1 overflow-hidden" aria-label="طقم أطباق سيراميك (24 قطعة)">
+                  <img src="https://placehold.co/600x600/ffffff/64748b?text=طقم+أطباق+أبيض" alt="طقم أطباق سيراميك أبيض أنيق - 24 قطعة" loading="lazy"
+                       class="w-full h-full object-cover product-image">
+                </a>
+                <div class="product-actions absolute bottom-4 right-1/2 transform translate-x-1/2 flex space-x-2 space-x-reverse">
+                   <button class="bg-white p-2.5 rounded-full shadow-md hover:bg-primary hover:text-white focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 transition-colors duration-200" aria-label="إضافة طقم الأطباق للمفضلة"><span class="lucide text-lg" aria-hidden="true">heart</span></button>
+                   <button class="bg-white p-2.5 rounded-full shadow-md hover:bg-primary hover:text-white focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 transition-colors duration-200" aria-label="نظرة سريعة على طقم الأطباق"><span class="lucide text-lg" aria-hidden="true">eye</span></button>
+                </div>
+              </figure>
+              <div class="p-5 flex flex-col flex-grow">
+                <h3 class="font-bold text-lg mb-1 text-neutral-800 leading-tight"><a href="#product-page-2" class="hover:text-primary focus:text-primary transition-colors duration-200 stretched-link">طقم أطباق سيراميك (24 قطعة)</a></h3>
+                <p class="text-sm text-neutral-500 mb-3 flex-grow">تصميم بسيط وعصري يزين مائدتك اليومية والمناسبات.</p>
+                <div class="flex justify-between items-center mt-auto">
+                  <span class="text-primary text-xl font-bold" aria-label="السعر 950 جنيه مصري">950 ج.م</span>
+                  <div class="flex items-center" aria-label="التقييم 5 من 5 نجوم">
+                     <span class="lucide text-base text-yellow-400" aria-hidden="true">star</span><span class="lucide text-base text-yellow-400" aria-hidden="true">star</span><span class="lucide text-base text-yellow-400" aria-hidden="true">star</span><span class="lucide text-base text-yellow-400" aria-hidden="true">star</span><span class="lucide text-base text-yellow-400" aria-hidden="true">star</span>
+                    <span class="text-neutral-500 text-xs mr-1">(85)</span>
+                  </div>
+                </div>
+                 <button class="mt-4 w-full bg-primary text-white py-2.5 px-4 rounded-lg font-semibold hover:bg-primary-dark focus-visible:bg-primary-dark focus-visible:ring-2 focus-visible:ring-primary-dark focus-visible:ring-offset-2 transition-colors duration-200 flex items-center justify-center space-x-2 space-x-reverse">
+                    <span class="lucide text-lg" aria-hidden="true">shopping-cart</span> <span>أضف للسلة</span>
+                 </button>
+              </div>
+            </article>
+             <article class="product-card bg-white rounded-xl shadow-card hover:shadow-card-hover focus-within:shadow-card-hover transition-all duration-300 ease-out-expo flex flex-col overflow-hidden group">
+              <figure class="relative">
+                <a href="#product-page-3" class="block aspect-w-1 aspect-h-1 overflow-hidden" aria-label="مقلاة هوائية ذكية 5 لتر">
+                  <img src="https://placehold.co/600x600/ffffff/facc15?text=مقلاة+ذكية" alt="مقلاة هوائية ذكية سعة 5 لتر - لون أصفر" loading="lazy"
+                       class="w-full h-full object-cover product-image">
+                </a>
+                <div class="product-actions absolute bottom-4 right-1/2 transform translate-x-1/2 flex space-x-2 space-x-reverse">
+                   <button class="bg-white p-2.5 rounded-full shadow-md hover:bg-primary hover:text-white focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 transition-colors duration-200" aria-label="إضافة المقلاة الهوائية للمفضلة"><span class="lucide text-lg" aria-hidden="true">heart</span></button>
+                   <button class="bg-white p-2.5 rounded-full shadow-md hover:bg-primary hover:text-white focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 transition-colors duration-200" aria-label="نظرة سريعة على المقلاة الهوائية"><span class="lucide text-lg" aria-hidden="true">eye</span></button>
+                </div>
+                 <span class="absolute top-3 left-3 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full shadow-sm">خصم 20%</span>
+              </figure>
+              <div class="p-5 flex flex-col flex-grow">
+                <h3 class="font-bold text-lg mb-1 text-neutral-800 leading-tight"><a href="#product-page-3" class="hover:text-primary focus:text-primary transition-colors duration-200 stretched-link">مقلاة هوائية ذكية 5 لتر</a></h3>
+                <p class="text-sm text-neutral-500 mb-3 flex-grow">طهي صحي وسريع بلمسة زر، مع تحكم ذكي.</p>
+                <div class="flex justify-between items-center mt-auto">
+                  <div>
+                      <span class="text-primary text-xl font-bold" aria-label="السعر 1199 جنيه مصري">1199 ج.م</span>
+                      <span class="text-neutral-400 line-through text-sm ml-2" aria-label="السعر الأصلي 1499 جنيه مصري">1499 ج.م</span>
+                  </div>
+                  <div class="flex items-center" aria-label="التقييم 4 من 5 نجوم">
+                     <span class="lucide text-base text-yellow-400" aria-hidden="true">star</span><span class="lucide text-base text-yellow-400" aria-hidden="true">star</span><span class="lucide text-base text-yellow-400" aria-hidden="true">star</span><span class="lucide text-base text-yellow-400" aria-hidden="true">star</span><span class="lucide text-base text-neutral-300" aria-hidden="true">star</span>
+                    <span class="text-neutral-500 text-xs mr-1">(203)</span>
+                  </div>
+                </div>
+                 <button class="mt-4 w-full bg-primary text-white py-2.5 px-4 rounded-lg font-semibold hover:bg-primary-dark focus-visible:bg-primary-dark focus-visible:ring-2 focus-visible:ring-primary-dark focus-visible:ring-offset-2 transition-colors duration-200 flex items-center justify-center space-x-2 space-x-reverse">
+                    <span class="lucide text-lg" aria-hidden="true">shopping-cart</span> <span>أضف للسلة</span>
+                 </button>
+              </div>
+            </article>
+             <article class="product-card bg-white rounded-xl shadow-card hover:shadow-card-hover focus-within:shadow-card-hover transition-all duration-300 ease-out-expo flex flex-col overflow-hidden group">
+              <figure class="relative">
+                <a href="#product-page-4" class="block aspect-w-1 aspect-h-1 overflow-hidden" aria-label="منظم أدوات مائدة قابل للتوسيع">
+                  <img src="https://placehold.co/600x600/ffffff/1e293b?text=منظم+أدراج+خشبي" alt="منظم أدوات المائدة خشبي قابل للتوسيع" loading="lazy"
+                       class="w-full h-full object-cover product-image">
+                </a>
+                <div class="product-actions absolute bottom-4 right-1/2 transform translate-x-1/2 flex space-x-2 space-x-reverse">
+                   <button class="bg-white p-2.5 rounded-full shadow-md hover:bg-primary hover:text-white focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 transition-colors duration-200" aria-label="إضافة منظم الأدوات للمفضلة"><span class="lucide text-lg" aria-hidden="true">heart</span></button>
+                   <button class="bg-white p-2.5 rounded-full shadow-md hover:bg-primary hover:text-white focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 transition-colors duration-200" aria-label="نظرة سريعة على منظم الأدوات"><span class="lucide text-lg" aria-hidden="true">eye</span></button>
+                </div>
+              </figure>
+              <div class="p-5 flex flex-col flex-grow">
+                <h3 class="font-bold text-lg mb-1 text-neutral-800 leading-tight"><a href="#product-page-4" class="hover:text-primary focus:text-primary transition-colors duration-200 stretched-link">منظم أدوات مائدة قابل للتوسيع</a></h3>
+                <p class="text-sm text-neutral-500 mb-3 flex-grow">مصنوع من الخشب الطبيعي، يحافظ على ترتيب أدراجك.</p>
+                <div class="flex justify-between items-center mt-auto">
+                  <span class="text-primary text-xl font-bold" aria-label="السعر 145 جنيه مصري">145 ج.م</span>
+                  <div class="flex items-center" aria-label="التقييم 5 من 5 نجوم">
+                     <span class="lucide text-base text-yellow-400" aria-hidden="true">star</span><span class="lucide text-base text-yellow-400" aria-hidden="true">star</span><span class="lucide text-base text-yellow-400" aria-hidden="true">star</span><span class="lucide text-base text-yellow-400" aria-hidden="true">star</span><span class="lucide text-base text-yellow-400" aria-hidden="true">star</span>
+                    <span class="text-neutral-500 text-xs mr-1">(67)</span>
+                  </div>
+                </div>
+                 <button class="mt-4 w-full bg-primary text-white py-2.5 px-4 rounded-lg font-semibold hover:bg-primary-dark focus-visible:bg-primary-dark focus-visible:ring-2 focus-visible:ring-primary-dark focus-visible:ring-offset-2 transition-colors duration-200 flex items-center justify-center space-x-2 space-x-reverse">
+                    <span class="lucide text-lg" aria-hidden="true">shopping-cart</span> <span>أضف للسلة</span>
+                 </button>
+              </div>
+            </article>
+          </div>
+           <div class="text-center mt-12 lg:mt-16">
+                 <a href="#all-products" class="inline-block border-2 border-primary text-primary font-bold py-3 px-10 rounded-full hover:bg-primary hover:text-white transition-all duration-300 ease-out-expo text-lg focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-50">
+                     عرض كل المنتجات الأكثر مبيعاً
+                 </a>
+           </div>
+        </div>
+      </section>
+
+      <section class="bg-gradient-to-r from-primary to-primary-dark text-white py-16 lg:py-20" role="region" aria-labelledby="newsletter-heading">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
+          <span class="lucide text-6xl mb-4 inline-block opacity-80" aria-hidden="true">mail</span>
+          <h2 id="newsletter-heading" class="text-3xl lg:text-4xl font-extrabold mb-3">لا تفوت جديدنا وعروضنا!</h2>
+          <p class="mb-8 max-w-xl mx-auto text-lg opacity-90">انضم إلى قائمتنا البريدية واحصل على خصومات حصرية وأحدث الأخبار مباشرة في بريدك.</p>
+          <form class="max-w-lg mx-auto flex flex-col sm:flex-row gap-3" aria-label="اشتراك بالنشرة الإخبارية">
+            <label for="newsletter-email" class="sr-only">البريد الإلكتروني</label>
+            <input id="newsletter-email" type="email" placeholder="أدخل بريدك الإلكتروني هنا" aria-label="البريد الإلكتروني" autocomplete="email"
+                   class="flex-1 px-6 py-3.5 rounded-full text-neutral-800 focus:outline-none focus:ring-2 focus:ring-white/80 shadow-md text-center sm:text-right placeholder:text-neutral-400" required>
+            <button type="submit" class="bg-white text-primary px-8 py-3.5 rounded-full font-bold hover:bg-neutral-100 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary transition-colors duration-200 shadow-md transform hover:scale-105">
+              اشتراك الآن
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <footer class="bg-neutral-800 text-neutral-200 pt-16 pb-8" role="contentinfo" aria-label="تذييل الموقع">
+        <div class="container mx-auto px-4 sm:px-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
+            <div class="space-y-4">
+              <h4 class="text-xl font-bold text-white mb-3">الشيمي للأدوات المنزلية</h4>
+              <p class="text-neutral-400 text-sm leading-relaxed">نلتزم بتقديم أفضل الأدوات المنزلية التي تجمع بين الجودة العالية والتصميم العصري لتلبية احتياجات كل بيت مصري.</p>
+              <address class="text-sm text-neutral-300 space-y-1 not-italic">
+                  <p class="flex items-start"><span class="lucide text-base text-primary mt-0.5 mr-2 shrink-0" aria-hidden="true">map-pin</span><span>شارع المثال 123, القاهرة, مصر</span></p>
+                  <p class="flex items-center"><span class="lucide text-base text-primary mr-2 shrink-0" aria-hidden="true">phone</span><a href="tel:+20212345678" class="hover:text-primary transition-colors duration-200">+20-2-12345678</a></p>
+                  <p class="flex items-center"><span class="lucide text-base text-primary mr-2 shrink-0" aria-hidden="true">mail</span><a href="mailto:info@alsheimy-homewares.com" class="hover:text-primary transition-colors duration-200">info@alsheimy-homewares.com</a></p>
+              </address>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold text-white mb-4">روابط سريعة</h4>
+              <ul class="space-y-2.5 text-sm">
+                <li><a href="#" class="text-neutral-400 hover:text-primary transition-colors duration-200">عن الشيمي</a></li>
+                <li><a href="#products" class="text-neutral-400 hover:text-primary transition-colors duration-200">المنتجات</a></li>
+                <li><a href="#offers" class="text-neutral-400 hover:text-primary transition-colors duration-200">العروض الخاصة</a></li>
+                <li><a href="#inspiration" class="text-neutral-400 hover:text-primary transition-colors duration-200">المدونة والإلهام</a></li>
+                <li><a href="#" class="text-neutral-400 hover:text-primary transition-colors duration-200">الوظائف</a></li>
+                <li><a href="#" class="text-neutral-400 hover:text-primary transition-colors duration-200">اتصل بنا</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold text-white mb-4">خدمة العملاء</h4>
+              <ul class="space-y-2.5 text-sm">
+                <li><a href="#" class="text-neutral-400 hover:text-primary transition-colors duration-200">الأسئلة الشائعة</a></li>
+                <li><a href="#" class="text-neutral-400 hover:text-primary transition-colors duration-200">سياسة الإرجاع والاستبدال</a></li>
+                <li><a href="#" class="text-neutral-400 hover:text-primary transition-colors duration-200">تتبع الطلبات</a></li>
+                <li><a href="#" class="text-neutral-400 hover:text-primary transition-colors duration-200">الضمان والصيانة</a></li>
+                <li><a href="#" class="text-neutral-400 hover:text-primary transition-colors duration-200">الشروط والأحكام</a></li>
+                 <li><a href="#" class="text-neutral-400 hover:text-primary transition-colors duration-200">سياسة الخصوصية</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold text-white mb-4">تابعنا وتواصل</h4>
+              <div class="flex space-x-3 space-x-reverse mb-6">
+                <a href="#" class="p-2.5 bg-neutral-700 rounded-full text-neutral-300 hover:bg-primary hover:text-white transition-colors duration-200" aria-label="صفحة الشيمي على فيسبوك">
+                  <span class="lucide text-lg" aria-hidden="true">facebook</span>
+                </a>
+                <a href="#" class="p-2.5 bg-neutral-700 rounded-full text-neutral-300 hover:bg-primary hover:text-white transition-colors duration-200" aria-label="حساب الشيمي على إنستجرام">
+                  <span class="lucide text-lg" aria-hidden="true">instagram</span>
+                </a>
+                <a href="#" class="p-2.5 bg-neutral-700 rounded-full text-neutral-300 hover:bg-primary hover:text-white transition-colors duration-200" aria-label="حساب الشيمي على تويتر">
+                  <span class="lucide text-lg" aria-hidden="true">twitter</span>
+                </a>
+                 <a href="#" class="p-2.5 bg-neutral-700 rounded-full text-neutral-300 hover:bg-primary hover:text-white transition-colors duration-200" aria-label="قناة الشيمي على يوتيوب">
+                  <span class="lucide text-lg" aria-hidden="true">youtube</span>
+                </a>
+              </div>
+              <h4 class="text-lg font-semibold text-white mb-3">حمل تطبيقنا</h4>
+              <div class="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3">
+                <a href="#" aria-label="تحميل تطبيق الشيمي من جوجل بلاي" class="inline-block group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-800 rounded-md">
+                    <svg class="h-10 w-auto hover:opacity-90 transition-opacity duration-200" viewBox="0 0 135 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="135" height="40" rx="6" fill="#334155"/>
+                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Cairo, sans-serif" font-size="12" fill="#FFFFFF" font-weight="600">Google Play</text>
+                        </svg>
+                </a>
+                <a href="#" aria-label="تحميل تطبيق الشيمي من آب ستور" class="inline-block group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-800 rounded-md">
+                     <svg class="h-10 w-auto hover:opacity-90 transition-opacity duration-200" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="120" height="40" rx="6" fill="#334155"/>
+                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Cairo, sans-serif" font-size="12" fill="#FFFFFF" font-weight="600">App Store</text>
+                        </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-neutral-700 pt-8 mt-8 text-center text-sm text-neutral-400">
+            <p>&copy; <span id="currentYear"></span> الشيمي للأدوات المنزلية. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+      </footer>
+
+  </main>
+
+  <button id="backToTopBtn" aria-label="العودة للأعلى" title="العودة للأعلى"
+           class="fixed bottom-6 left-6 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-dark focus-visible:ring-offset-2 transition-all duration-300 ease-out-expo opacity-0 invisible z-40 transform scale-90">
+        <span class="lucide text-xl" aria-hidden="true">arrow-up</span>
+   </button>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+  <script>
+    // Wait for the DOM to be fully loaded
+    $(document).ready(function(){
+
+      // --- Slick Slider Initialization ---
+      const heroSlider = $('.hero-slider');
+      if (heroSlider.length) { // Check if the slider element exists
+          heroSlider.slick({
+            dots: true,
+            arrows: false, // Set to true if you want default arrows
+            infinite: true,
+            speed: 800, // Slightly slower for smoother fade
+            fade: true,
+            cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
+            autoplay: true,
+            autoplaySpeed: 5500, // Longer pause
+            rtl: true,
+            pauseOnHover: true,
+            adaptiveHeight: false,
+            // Custom Paging Example (optional)
+            // customPaging : function(slider, i) {
+            //     return '<button class="h-2 w-2 rounded-full bg-primary/30 focus:outline-none focus:ring-2 focus:ring-primary/50 mx-1" aria-label="Go to slide '+(i+1)+'"></button>';
+            // },
+            // responsive: [ // Example responsiveness
+            //     {
+            //         breakpoint: 768,
+            //         settings: {
+            //             // Adjust settings for smaller screens if needed
+            //         }
+            //     }
+            // ]
+          });
+           // Ensure active dot styling is applied correctly if using customPaging
+           // heroSlider.on('afterChange', function(event, slick, currentSlide){
+           //     $('.slick-dots button').removeClass('bg-primary'); // Reset all
+           //     $('.slick-dots li').eq(currentSlide).find('button').addClass('bg-primary'); // Style active
+           // });
+           // $('.slick-dots li').eq(0).find('button').addClass('bg-primary'); // Style initial active dot
+      } else {
+          console.warn("Hero slider element not found.");
+      }
+
+      // --- Mobile Menu Toggle Functionality ---
+      const mobileMenuButton = document.getElementById('mobileMenuButton');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const largeScreenBreakpoint = 1024; // lg breakpoint in Tailwind
+
+      if (mobileMenuButton && mobileMenu) { // Check if elements exist
+          mobileMenuButton.addEventListener('click', function() {
+            toggleMobileMenu();
+          });
+
+          // Close mobile menu when a link is clicked
+          mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+              closeMobileMenu();
+            });
+          });
+
+          // Close menu if window is resized above the breakpoint
+          window.addEventListener('resize', function() {
+              if (window.innerWidth >= largeScreenBreakpoint) {
+                  closeMobileMenu();
+              }
+          });
+
+      } else {
+          console.warn("Mobile menu button or menu element not found.");
+      }
+
+      function toggleMobileMenu() {
+          const isOpen = mobileMenu.classList.toggle('open');
+          mobileMenuButton.setAttribute('aria-expanded', isOpen);
+          // Optional: Toggle body scroll lock (requires more complex logic/library for full robustness)
+          // document.body.style.overflow = isOpen ? 'hidden' : '';
+      }
+
+      function closeMobileMenu() {
+          if (mobileMenu.classList.contains('open')) {
+              mobileMenu.classList.remove('open');
+              mobileMenuButton.setAttribute('aria-expanded', 'false');
+              // document.body.style.overflow = '';
+          }
+      }
+
+       // --- Back to Top Button Functionality ---
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        let scrollTimeout; // For debouncing
+
+        if (backToTopBtn) { // Check if button exists
+            const scrollHandler = () => {
+                // Debounce the scroll event
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    if (window.pageYOffset > 400) { // Show after scrolling 400px
+                        backToTopBtn.classList.add('opacity-100', 'visible', 'scale-100');
+                        backToTopBtn.classList.remove('opacity-0', 'invisible', 'scale-90');
+                    } else {
+                        backToTopBtn.classList.remove('opacity-100', 'visible', 'scale-100');
+                        backToTopBtn.classList.add('opacity-0', 'invisible', 'scale-90');
+                    }
+                }, 150); // Adjust debounce time (ms) as needed
+            };
+
+            window.addEventListener('scroll', scrollHandler);
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        } else {
+            console.warn("Back to top button element not found.");
+        }
+
+        // --- Set Current Year in Footer ---
+        const currentYearElement = document.getElementById('currentYear');
+        if (currentYearElement) { // Check if element exists
+            currentYearElement.textContent = new Date().getFullYear();
+        } else {
+            console.warn("Current year element not found in footer.");
+        }
+
+        // --- Add simple fade-in-up animation on scroll (Basic Example) ---
+        // For more complex animations, consider Intersection Observer API
+        const animatedElements = document.querySelectorAll('.animate-fade-in-up');
+        if (animatedElements.length > 0) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1'; // Trigger animation
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target); // Stop observing once animated
+                    }
+                });
+            }, { threshold: 0.1 }); // Trigger when 10% visible
+
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+    }); // End document ready
+  </script>
+</body>
+</html>
